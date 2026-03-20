@@ -38,36 +38,37 @@ Evaluation count : 5983572 in 6 samples of 997262 calls.
                    Overhead used : 7.837712 ns
 => nil
 ```
-And **~1.5x** faster than inlining `StringBuilder` due it's usage of `+` string concatanation 
-which allows JVM to do optimizations.
-```clojure
+
+It's comparable to inlining `StringBuilder`.
+```clojure 
 (do
     (criterium/quick-bench
       (.toString
         (doto (StringBuilder. "Lorem")
-         (.append "Ipsum") (.append "is") (.append "simply") (.append "dummy") (.append "text")
-         (.append "of") (.append "the") (.append "printing") (.append "and") (.append "typesetting")
-         (.append "industry."))))
+          (.append "Ipsum") (.append "is") (.append "simply") (.append "dummy") (.append "text")
+          (.append "of") (.append "the") (.append "printing") (.append "and") (.append "typesetting")
+          (.append "industry."))))
     (criterium/quick-bench
       (f/str "Lorem" "Ipsum" "is" "simply" "dummy" "text" "of" "the" "printing" "and" "typesetting" "industry.")))
-Evaluation count : 3441240 in 6 samples of 573540 calls.
-             Execution time mean : 171.460375 ns
-    Execution time std-deviation : 6.830826 ns
-   Execution time lower quantile : 165.633223 ns ( 2.5%)
-   Execution time upper quantile : 182.273620 ns (97.5%)
-                   Overhead used : 7.818298 ns
-Evaluation count : 5299620 in 6 samples of 883270 calls.
-             Execution time mean : 116.245900 ns
-    Execution time std-deviation : 16.660090 ns
-   Execution time lower quantile : 106.090365 ns ( 2.5%)
-   Execution time upper quantile : 143.643040 ns (97.5%)
-                   Overhead used : 7.818298 ns
+Evaluation count : 5396484 in 6 samples of 899414 calls.
+             Execution time mean : 116.024831 ns
+    Execution time std-deviation : 10.652410 ns
+   Execution time lower quantile : 104.181137 ns ( 2.5%)
+   Execution time upper quantile : 125.789789 ns (97.5%)
+                   Overhead used : 7.818820 ns
+Evaluation count : 5302530 in 6 samples of 883755 calls.
+             Execution time mean : 117.508842 ns
+    Execution time std-deviation : 17.212965 ns
+   Execution time lower quantile : 105.548643 ns ( 2.5%)
+   Execution time upper quantile : 144.886630 ns (97.5%)
+                   Overhead used : 7.818820 ns
 
 Found 1 outliers in 6 samples (16.6667 %)
 	low-severe	 1 (16.6667 %)
- Variance from outliers : 31.9246 % Variance is moderately inflated by outliers
+ Variance from outliers : 31.9848 % Variance is moderately inflated by outliers
 => nil
 ```
+
 Also it's faster than `clojure.string/join` using without separator (internally
 it's `(apply str xs)`).
 ```clojure 
