@@ -11,7 +11,7 @@
 
 (f/str)  ; => ""
 (f/str nil)  ; => ""
-(f/str "Hello" "world!")  ; => "helloworld"
+(f/str "hello" "world")  ; => "helloworld"
 (apply f/str [1 2 3])  ; => "123"
 ```
 
