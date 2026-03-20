@@ -1,5 +1,7 @@
 # fstr
 
+[![Clojars Project](https://img.shields.io/clojars/v/org.clojars.ilevd/fstr.svg)](https://clojars.org/
+
 **Experimental** fast string concatenation for Clojure implemented in Java.
 
 ## Usage
