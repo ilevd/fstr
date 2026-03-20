@@ -337,32 +337,32 @@ public class Strings {
                              Object arg8, Object arg9, Object arg10, Object arg11, Object arg12, Object arg13,
                              Object arg14, Object arg15, Object arg16, Object arg17, Object arg18, Object arg19,
                              Object arg20, Object... args) {
-            StringBuilder sb = new StringBuilder();
+            StringBuilder sb = new StringBuilder(arg1 == null ? "" : arg1.toString());
+            if (arg2 != null) sb.append(arg2.toString());
+            if (arg3 != null) sb.append(arg3.toString());
+            if (arg4 != null) sb.append(arg4.toString());
+            if (arg5 != null) sb.append(arg5.toString());
+            if (arg6 != null) sb.append(arg6.toString());
+            if (arg7 != null) sb.append(arg7.toString());
+            if (arg8 != null) sb.append(arg8.toString());
+            if (arg9 != null) sb.append(arg9.toString());
+            if (arg10 != null) sb.append(arg10.toString());
+            if (arg11 != null) sb.append(arg11.toString());
+            if (arg12 != null) sb.append(arg12.toString());
+            if (arg13 != null) sb.append(arg13.toString());
+            if (arg14 != null) sb.append(arg14.toString());
+            if (arg15 != null) sb.append(arg15.toString());
+            if (arg16 != null) sb.append(arg16.toString());
+            if (arg17 != null) sb.append(arg17.toString());
+            if (arg18 != null) sb.append(arg18.toString());
+            if (arg19 != null) sb.append(arg19.toString());
+            if (arg20 != null) sb.append(arg20.toString());
             for (Object x : args) {
                 if (x != null) {
                     sb.append(x.toString());
                 }
             }
-            return (arg1 == null ? "" : arg1.toString()) +
-                    (arg2 == null ? "" : arg2.toString()) +
-                    (arg3 == null ? "" : arg3.toString()) +
-                    (arg4 == null ? "" : arg4.toString()) +
-                    (arg5 == null ? "" : arg5.toString()) +
-                    (arg6 == null ? "" : arg6.toString()) +
-                    (arg7 == null ? "" : arg7.toString()) +
-                    (arg8 == null ? "" : arg8.toString()) +
-                    (arg9 == null ? "" : arg9.toString()) +
-                    (arg10 == null ? "" : arg10.toString()) +
-                    (arg11 == null ? "" : arg11.toString()) +
-                    (arg12 == null ? "" : arg12.toString()) +
-                    (arg13 == null ? "" : arg13.toString()) +
-                    (arg14 == null ? "" : arg14.toString()) +
-                    (arg15 == null ? "" : arg15.toString()) +
-                    (arg16 == null ? "" : arg16.toString()) +
-                    (arg17 == null ? "" : arg17.toString()) +
-                    (arg18 == null ? "" : arg18.toString()) +
-                    (arg19 == null ? "" : arg19.toString()) +
-                    (arg20 == null ? "" : arg20.toString()) + sb.toString();
+            return sb.toString();
         }
 
         @Override
