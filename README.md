@@ -1,6 +1,6 @@
 # fstr
 
-[![Clojars Project](https://img.shields.io/clojars/v/org.clojars.ilevd/fstr.svg)](https://clojars.org/
+[![Clojars Project](https://img.shields.io/clojars/v/org.clojars.ilevd/fstr.svg)](https://clojars.org/org.clojars.ilevd/fstr)
 
 **Experimental** fast string concatenation for Clojure implemented in Java.
 
